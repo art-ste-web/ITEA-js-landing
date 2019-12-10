@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+}
+
+.menu-container {
+    height: 60px;
+    background: #dd5347;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 800px;
+    width: 100%;
+}
+
+.first-block-container {
+    height: 100vh;
+    background: #f5b365;
+    padding-top: 20%;
+}
+
