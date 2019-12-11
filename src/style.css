@@ -1,20 +1,87 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    
 }
 
 .menu-container {
-    height: 60px;
-    background: #dd5347;
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
     top: 0;
     left: 0;
     min-width: 800px;
     width: 100%;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
 }
-
+.menu-container ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+}
+.menu-container ul li {
+    text-align: center;
+    display: inline-block;
+    margin-right: 1.6rem;
+}
+.menu-container ul li a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-size: 1.3rem;
+    display: block;
+    padding: 5px;
+}
+.menu-container ul li a:hover {
+    text-shadow: 0 0 .75px #333, 0 0 .75px #333;
+    transition: text-shadow .3s;
+}
+.menu-container .home-button {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    margin-left: 1.5rem;
+}
 .first-block-container {
+    background: url(img/first-scr-bg.jpg);
+    background-size: cover;
     height: 100vh;
-    background: #f5b365;
-    padding-top: 20%;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 1000px inset;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-right: 20%;
 }
-
+.first-block-container h1 {
+    color: #f2f2f2;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+.first-block-container p {
+    color: #f2f2f2;
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin-bottom: 3rem;
+}
+.first-block-container button {
+    display: inline-block;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    box-shadow: none;
+    border: none;
+    color: #f2f2f2;
+    background: #1C86EE;
+}
+.first-block-container button:hover {
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: border-box .2s;
+}

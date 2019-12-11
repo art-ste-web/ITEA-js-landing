@@ -6,13 +6,17 @@ class MainMenuBlock {
         this.mainContainer = mainContainer;
         this.menuContainer = document.createElement('div');
         this.menuHomeBtn = document.createElement('a');
+        this.menuHomeBtnIcon = document.createElement('img');
         this.menuList = document.createElement('ul');
         this.menuItem = document.createElement('li');
+        
     }
     renderHomeBtn() {
         this.menuContainer.append(this.menuHomeBtn);
-        this.menuHomeBtn.innerHTML = 'Home';
         this.menuHomeBtn.setAttribute('href', '#');
+        this.menuHomeBtn.className = 'home-button';
+        this.menuHomeBtn.append(this.menuHomeBtnIcon);
+        this.menuHomeBtnIcon.setAttribute('src', 'src/img/home.svg');
     }
 
     renderMenuList() {
@@ -21,7 +25,7 @@ class MainMenuBlock {
     //    for (let i=0; i<5; i++) {
     //         this.menuList.append(this.menuItem); 
     //     }
-        this.menuList.innerHTML = '<li>About</li> <li>Portfolio</li> <li>Blog</li> <li>Team</li> <li>Contact</li>' 
+        this.menuList.innerHTML = '<li><a href="#about">About</a></li> <li><a href="#portfolio">Portfolio</a></li> <li><a href="#blog">Blog</a></li> <li><a href="#team">Team</a></li> <li><a href="#contact">Contact</a></li>' 
     }
 
     renderMainMenu() {
