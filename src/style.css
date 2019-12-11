@@ -57,6 +57,7 @@ body {
     padding-top: 15%;
     padding-left: 5%;
     padding-right: 20%;
+    min-height: 1000px; /*--------*/
 }
 .first-block-container h1 {
     color: #f2f2f2;
