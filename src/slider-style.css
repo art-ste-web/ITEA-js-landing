@@ -1,0 +1,66 @@
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+.sliderWrapper {
+    width: 800px;
+    min-height: 480px;
+    background: #ada4a4;
+    margin: 10px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+.sliderImg {
+    position: absolute;
+    width: 800px;
+    height: 480px;
+    opacity: 0;
+    transition: opacity 1s;
+    display: block;
+    
+}
+.showedImg {
+    opacity: 1;
+    
+}
+
+.sliderControlBtnLeft {
+    top: 242px;
+    left: -70px;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url(img/slider-img/arrow.svg);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.sliderControlBtnRight {
+    top: 242px;
+    right: -70px;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url(img/slider-img/arrow.svg);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3px;
+    border-radius: 50%;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+.sliderControlBtnRight:hover, .sliderControlBtnLeft:hover {
+    background-color:rgba(255, 255, 255, 0.4);
+    transition: background-color .2s;
+}
