@@ -1,3 +1,5 @@
+
+
 :active, :hover, :focus {
     outline: 0;
     outline-offset: 0;
@@ -63,4 +65,16 @@
 .sliderControlBtnRight:hover, .sliderControlBtnLeft:hover {
     background-color:rgba(255, 255, 255, 0.4);
     transition: background-color .2s;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .sliderWrapper {
+        width: 600px;
+        min-height: 320px;
+    }
+    .sliderImg {
+        width: 600px;
+        height: 320px;
+    }
 }
