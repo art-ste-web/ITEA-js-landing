@@ -68,7 +68,7 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
     .sliderWrapper {
         width: 600px;
         min-height: 320px;
