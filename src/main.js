@@ -1,5 +1,7 @@
 let mainContainer = document.getElementById('main_container');
-
+/**
+ * @desc create class for nav menu
+*/
 class MainMenuBlock {
     constructor(mainContainer) {
         this.mainContainer = mainContainer;
@@ -31,7 +33,9 @@ class MainMenuBlock {
     }
 }
 
-
+/**
+ * @desc create class for typical block with inner elements
+*/
 class CreateBlock {
     constructor(mainContainer) {
         this.mainContainer = mainContainer;
@@ -75,7 +79,9 @@ class CreateBlock {
 
 }
 
-
+/**
+ * @desc create class for First block 
+*/
 class FirstScreen extends CreateBlock {
     constructor(){
         super(mainContainer);
@@ -88,7 +94,9 @@ class FirstScreen extends CreateBlock {
         super.renderBlockButton("See more...", "onclick", "javascript:document.location.href='#about'");
     }
 }
-
+/**
+ * @desc create class for About block 
+*/
 class AboutBlock extends CreateBlock {
     constructor() {
         super(mainContainer);
@@ -109,6 +117,9 @@ class AboutBlock extends CreateBlock {
         this.renderAboutText();
     }
 }
+/**
+ * @desc create class for Portfolio block 
+*/
 class PortfolioBlock extends CreateBlock {
     constructor() {
         super(mainContainer);
@@ -119,6 +130,10 @@ class PortfolioBlock extends CreateBlock {
     }
 
 }
+
+/**
+ * @desc create class for Blog block 
+*/
 class BlogBlock extends CreateBlock {
     constructor() {
         super(mainContainer);
@@ -131,6 +146,9 @@ class BlogBlock extends CreateBlock {
     }
 
 }
+/**
+ * @desc create class for New Post cards in Blog block 
+*/
 class BlogPostCard {
     constructor(cardsWrapper) {
         this.cardsWrapper = cardsWrapper;
@@ -193,7 +211,9 @@ class BlogPostCard {
 
     }
 }
-
+/**
+ * @desc create class for Team block 
+*/
 class TeamBlock extends CreateBlock {
     constructor() {
         super(mainContainer);
@@ -206,6 +226,9 @@ class TeamBlock extends CreateBlock {
     }
 
 }
+/**
+ * @desc create class for team member cards in Team block 
+*/
 class TeamCard {
     constructor(teamCardsWrapper) {
         this.teamCardsWrapper = teamCardsWrapper;
@@ -260,7 +283,9 @@ class TeamCard {
 
     }
 }
-
+/**
+ * @desc create class for Contact block 
+*/
 class ContactBlock extends CreateBlock {
     constructor() {
         super(mainContainer);
@@ -273,6 +298,9 @@ class ContactBlock extends CreateBlock {
     }
 
 }
+/**
+ * @desc create class for Contact form in Contact block
+*/
 class ContactForm {
     constructor(contactFormWrapper) {
         this.contactFormWrapper = contactFormWrapper;
@@ -282,8 +310,6 @@ class ContactForm {
         this.formSubmitInput = document.createElement('input');
         this.formTextarea = document.createElement('textarea');
     }
-    render
-
     renderTextInput(inputTextPlaceholder) {
         this.contactForm.append(this.formTextInput);
         this.formTextInput.setAttribute('type', 'text');
@@ -311,6 +337,10 @@ class ContactForm {
         this.renderSubmitButton('Send');
     }
 }
+
+/**
+ * @desc rendering page
+*/
 
 /**
  * @desc render nav menu
@@ -370,37 +400,32 @@ teamCard4.renderTeamCard_4();
 let contactBlock = new ContactBlock(mainContainer);
 contactBlock.renderContact();
 let contactFormWrapper = document.getElementById('contact_form_wrapper');
+/**
+ * @desc render Contact form in Contact block
+*/
 let formContactBlock = new ContactForm(contactFormWrapper);
 formContactBlock.renderForm();
 
 
-//скролл (доработать)
+//плавный скролл (пока не работает)
+// let links = document.querySelectorAll('.menu-container a');
+// let blocks = document.querySelectorAll('.block');
+// function scrollIt(element) {
+//     window.scrollTo({
+//       behavior: 'smooth',
+//       left: 0,
+//       top: element.offsetTop });
+// }
 
-let links = document.querySelectorAll('.menu-container a');
-let blocks = document.querySelectorAll('.block');
-function scrollIt(element) {
-    window.scrollTo({
-      behavior: 'smooth',
-      left: 0,
-      top: element.offsetTop });
-}
-// for (let i=0; i<links.length; i++) {
-//      links[i].addEventListener('click', function () {
-//         for (let j=0; j<blocks.length; j++) {
-//             scrollIt(blocks[i]);
-//         } 
-        
-//     });
-// };
-links[0].addEventListener('click', function() {
-    scrollIt(blocks[0]);
-})
-links[1].addEventListener('click', function() {
-    scrollIt(blocks[1]);
-})
+// links[0].addEventListener('click', function() {
+//     scrollIt(blocks[0]);
+// })
+// links[1].addEventListener('click', function() {
+//     scrollIt(blocks[1]);
+// })
 
-console.log(links);
- console.log(blocks);
+// console.log(links);
+//  console.log(blocks);
 
 
 

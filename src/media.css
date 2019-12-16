@@ -1,0 +1,28 @@
+@media only screen and (max-width: 960px) {
+    #first_block, #about, #portfolio, #blog, #team, #contact {
+        min-width: 800px;
+    }
+    #blog #cards_wrapper {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+    #blog #cards_wrapper .card-container {
+        width: 30%;
+    }
+       
+    .sliderWrapper {
+        width: 600px;
+        min-height: 320px;
+    }
+    .sliderImg {
+        width: 600px;
+        height: 320px;
+    }
+    .sliderControlBtnLeft {
+        top: 140px;
+    }
+    .sliderControlBtnRight {
+        top: 140px;
+    }
+}
+
