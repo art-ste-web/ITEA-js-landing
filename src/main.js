@@ -408,24 +408,24 @@ formContactBlock.renderForm();
 
 
 //плавный скролл (пока не работает)
-let links = document.querySelectorAll('.menu-container a');
-let blocks = document.querySelectorAll('.block');
-function scrollIt(element) {
-    window.scrollTo({
-      behavior: 'smooth',
-      left: 0,
-      top: element.offsetTop });
-}
+// let links = document.querySelectorAll('.menu-container a');
+// let blocks = document.querySelectorAll('.block');
+// function scrollIt(element) {
+//     window.scrollTo({
+//       behavior: 'smooth',
+//       left: 0,
+//       top: element.offsetTop });
+// }
 
-links[0].addEventListener('click', function() {
-    scrollIt(blocks[3]);
-})
-links[2].addEventListener('click', function() {
-    scrollIt(blocks[2]);
-})
+// links[0].addEventListener('click', function() {
+//     scrollIt(blocks[3]);
+// })
+// links[2].addEventListener('click', function() {
+//     scrollIt(blocks[2]);
+// })
 
-console.log(links);
- console.log(blocks);
+// console.log(links);
+//  console.log(blocks);
 
 
 
