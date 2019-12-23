@@ -2,14 +2,13 @@ let mainContainer = document.getElementById('main_container');
 /**
  * @desc create class for nav menu
 */
+const menuItemsNames = ['About', 'Portfolio', 'Blog', 'Team', 'Contact'];
 class MainMenuBlock {
     constructor(mainContainer) {
         this.mainContainer = mainContainer;
         this.menuContainer = document.createElement('div');
         this.menuHomeBtn = document.createElement('img');
         this.menuList = document.createElement('ul');
-        this.menuItem = document.createElement('li');
-        
     }
     renderHomeBtn() {
         this.menuContainer.append(this.menuHomeBtn);
@@ -17,11 +16,22 @@ class MainMenuBlock {
         this.menuHomeBtn.setAttribute('src', 'src/img/home.svg');
     }
 
-    renderMenuList() {
-       this.menuContainer.append(this.menuList);
-       this.menuList.innerHTML = '<li>About</li> <li>Portfolio</li> <li>Blog</li> <li>Team</li> <li>Contact</li>' 
+    // renderMenuList() {
+    //    this.menuContainer.append(this.menuList);
+    //    this.menuList.innerHTML = '<li>About</li> <li>Portfolio</li> <li>Blog</li> <li>Team</li> <li>Contact</li>' 
 
-    }
+    // }
+
+    renderMenuList() {
+       
+        this.menuContainer.append(this.menuList);
+        for (let i = 0; i < menuItemsNames.length; i++) {
+            let item = document.createElement('li');
+            this.menuList.append(item);
+            item.innerHTML = menuItemsNames[i];
+        } 
+ 
+     }
 
     renderMainMenu() {
         this.renderHomeBtn()
