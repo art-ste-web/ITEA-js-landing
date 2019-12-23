@@ -6,23 +6,21 @@ class MainMenuBlock {
     constructor(mainContainer) {
         this.mainContainer = mainContainer;
         this.menuContainer = document.createElement('div');
-        this.menuHomeBtn = document.createElement('a');
-        this.menuHomeBtnIcon = document.createElement('img');
+        this.menuHomeBtn = document.createElement('img');
         this.menuList = document.createElement('ul');
         this.menuItem = document.createElement('li');
         
     }
     renderHomeBtn() {
         this.menuContainer.append(this.menuHomeBtn);
-        this.menuHomeBtn.setAttribute('href', '#');
         this.menuHomeBtn.className = 'home-button';
-        this.menuHomeBtn.append(this.menuHomeBtnIcon);
-        this.menuHomeBtnIcon.setAttribute('src', 'src/img/home.svg');
+        this.menuHomeBtn.setAttribute('src', 'src/img/home.svg');
     }
 
     renderMenuList() {
        this.menuContainer.append(this.menuList);
-       this.menuList.innerHTML = '<li><a href="#about">About</a></li> <li><a href="#portfolio">Portfolio</a></li> <li><a href="#blog">Blog</a></li> <li><a href="#team">Team</a></li> <li><a href="#contact">Contact</a></li>' 
+       this.menuList.innerHTML = '<li>About</li> <li>Portfolio</li> <li>Blog</li> <li>Team</li> <li>Contact</li>' 
+
     }
 
     renderMainMenu() {
@@ -91,7 +89,7 @@ class FirstScreen extends CreateBlock {
         super.renderBlockContainer('first_block');
         super.renderBlockHeader('Hello, Welcome To My Oficcial Website!');
         super.renderBlockParagraph('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis beatae ipsam aut, dignissimos eum laboriosam amet sint asperiores dolorem minus.');
-        super.renderBlockButton("See more...", "onclick", "javascript:document.location.href='#about'");
+        super.renderBlockButton("See more...", "id", "see_more_btn");
     }
 }
 /**
@@ -407,25 +405,43 @@ let formContactBlock = new ContactForm(contactFormWrapper);
 formContactBlock.renderForm();
 
 
-//плавный скролл (пока не работает)
-// let links = document.querySelectorAll('.menu-container a');
-// let blocks = document.querySelectorAll('.block');
-// function scrollIt(element) {
-//     window.scrollTo({
-//       behavior: 'smooth',
-//       left: 0,
-//       top: element.offsetTop });
-// }
+//плавный скролл 
+let homeBtn = document.querySelector('.home-button');
+let moreBtn = document.querySelector('#see_more_btn');
+let menuItems = document.querySelectorAll('.menu-container li');
+let blocks = document.querySelectorAll('.block');
+function scrollIt(element) {
+    window.scrollTo({
+      behavior: 'smooth',
+      left: 0,
+      top: element.offsetTop });
+}
 
-// links[0].addEventListener('click', function() {
-//     scrollIt(blocks[3]);
-// })
-// links[2].addEventListener('click', function() {
-//     scrollIt(blocks[2]);
-// })
-
-// console.log(links);
+homeBtn.addEventListener('click', function() {
+    scrollIt(blocks[0]);
+})
+moreBtn.addEventListener('click', function() {
+    scrollIt(blocks[1]);
+})
+menuItems[0].addEventListener('click', function() {
+    scrollIt(blocks[1]);
+})
+menuItems[1].addEventListener('click', function() {
+    scrollIt(blocks[2]);
+})
+menuItems[2].addEventListener('click', function() {
+    scrollIt(blocks[3]);
+})
+menuItems[3].addEventListener('click', function() {
+    scrollIt(blocks[4]);
+})
+menuItems[4].addEventListener('click', function() {
+    scrollIt(blocks[5]);
+})
+// console.log(menuItems);
 //  console.log(blocks);
+//  console.log(homeBtn);
+
 
 
 

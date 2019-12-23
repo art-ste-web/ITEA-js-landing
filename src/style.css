@@ -30,15 +30,16 @@ body {
     text-align: center;
     display: inline-block;
     margin-right: 1.6rem;
+    cursor: pointer;
 }
-.menu-container ul li a {
+.menu-container ul li {
     text-decoration: none;
     color: #1c1c1c;
     font-size: 1.3rem;
     display: block;
     padding: 5px;
 }
-.menu-container ul li a:hover {
+.menu-container ul li:hover {
     text-shadow: 0 0 .75px #333, 0 0 .75px #333;
     transition: text-shadow .3s;
 }
@@ -48,6 +49,7 @@ body {
     width: 40px;
     margin: 10px;
     margin-left: 1.5rem;
+    cursor: pointer;
 }
 #first_block {
     background: url(img/first-scr-bg.jpg);
