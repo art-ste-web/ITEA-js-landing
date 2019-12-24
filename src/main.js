@@ -1,8 +1,8 @@
-let mainContainer = document.getElementById('main_container');
+// let mainContainer = document.getElementById('main_container');
 /**
  * @desc create class for nav menu
 */
-const menuItemsNames = ['About', 'Portfolio', 'Blog', 'Team', 'Contact'];
+// const menuItemsNames = ['About', 'Portfolio', 'Blog', 'Team', 'Contact'];
 class MainMenuBlock {
     constructor(mainContainer) {
         this.mainContainer = mainContainer;
@@ -160,25 +160,48 @@ class BlogBlock extends CreateBlock {
 class BlogPostCard {
     constructor(cardsWrapper) {
         this.cardsWrapper = cardsWrapper;
-        this.cardContainer = document.createElement('div');
-        this.cardImg = document.createElement('img');
-        this.postTitle = document.createElement('h2');
+        // this.cardContainer = document.createElement('div');
+        // this.cardImg = document.createElement('img');
+        // this.postTitle = document.createElement('h2');
         this.postContent = document.createElement('p');
         this.cardFooter = document.createElement('div');
         this.readPostBtn = document.createElement('button');
     }
-    renderCardContainer(cardContainerClassName) {
-        this.cardsWrapper.append(this.cardContainer);
-        this.cardContainer.className = cardContainerClassName;
+    renderCardContainer() {
+        for  (let i = 0; i < blogCardsData.length; i++) {
+            let cardContainer = document.createElement('div');
+            this.cardsWrapper.append(cardContainer);
+            cardContainer.className = 'card-container';
+        }
     }
-    renderCardImg(cardImgSrc) {
-        this.cardContainer.append(this.cardImg);
-        this.cardImg.setAttribute('src', cardImgSrc);
+    // renderCardContainer(cardContainerClassName) {
+    //     this.cardsWrapper.append(this.cardContainer);
+    //     this.cardContainer.className = cardContainerClassName;
+    // }
+    renderCardImg() {
+        for (let i = 0; i < blogCardsData.length; i++) {
+            let cardImg = document.createElement('img');
+            this.cardContainer.append(cardImg);
+            cardImg.setAttribute('src', blogCardImgs[i]);
+        }
+       
     }
-    renderPostTitle(postTitleText) {
-        this.cardContainer.append(this.postTitle);
-        this.postTitle.innerHTML = postTitleText;
+    // renderCardImg(cardImgSrc) {
+    //     this.cardContainer.append(this.cardImg);
+    //     this.cardImg.setAttribute('src', cardImgSrc);
+    // }
+    renderPostTitle() {
+        for (let i = 0; i < blogCardsData.length; i++) {
+            let postTitle = document.createElement('h2');
+            this.cardContainer.append(postTitle);
+            postTitle.innerHTML = blogCardTitles[i];
+            console.log(postTitle);
+        }
     }
+    // renderPostTitle(postTitleText) {
+    //     this.cardContainer.append(this.postTitle);
+    //     this.postTitle.innerHTML = postTitleText;
+    // }
     renderPostContent(postContentText) {
         this.cardContainer.append(this.postContent);
         this.postContent.innerHTML = postContentText;
@@ -191,33 +214,56 @@ class BlogPostCard {
         this.cardFooter.append(this.readPostBtn);
         this.readPostBtn.innerHTML = btnText;
     }
-    renderPostCard_1() {
-        this.renderCardContainer('card-container');
-        this.renderCardImg('src/img/post-img-1.jpg')
-        this.renderPostTitle('New Post 1');
-        this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
-        this.renderCardFooter('card-footer');
-        this.renderReadPostBtn('Read more...');
+    renderPostCard() {
+        // for (let i = 0; i < blogCardsData.length; i++){
+        //     let cardContainer =  document.createElement('div');
+        //     let cardImage = document.createElement('img');
+        //     this.cardsWrapper.append(cardContainer);
+        //     cardContainer.className = 'card-container';
+        //     cardContainer.append(cardImage);
+        //     cardImage.setAttribute('src', blogCardImgs[i]);
 
-    }
-    renderPostCard_2() {
-        this.renderCardContainer('card-container');
-        this.renderCardImg('src/img/post-img-1.jpg')
-        this.renderPostTitle('New Post 2');
-        this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
-        this.renderCardFooter('card-footer');
-        this.renderReadPostBtn('Read more...');
 
+        // }
+        
+        // this.renderCardImg('src/img/post-img-1.jpg')
+        // this.renderPostTitle('New Post 1');
+        // this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
+        // this.renderCardFooter('card-footer');
+        // this.renderReadPostBtn('Read more...');
+        console.log(this.cardsWrapper);
+        
+        this.renderCardContainer();
+        this.renderCardImg();
+        this.renderPostTitle();
     }
-    renderPostCard_3() {
-        this.renderCardContainer('card-container');
-        this.renderCardImg('src/img/post-img-1.jpg');
-        this.renderPostTitle('New Post 3');
-        this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
-        this.renderCardFooter('card-footer');
-        this.renderReadPostBtn('Read more...');
+    // renderPostCard_1() {
+    //     this.renderCardContainer('card-container');
+    //     this.renderCardImg('src/img/post-img-1.jpg')
+    //     this.renderPostTitle('New Post 1');
+    //     this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
+    //     this.renderCardFooter('card-footer');
+    //     this.renderReadPostBtn('Read more...');
 
-    }
+    // }
+    // renderPostCard_2() {
+    //     this.renderCardContainer('card-container');
+    //     this.renderCardImg('src/img/post-img-1.jpg')
+    //     this.renderPostTitle('New Post 2');
+    //     this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
+    //     this.renderCardFooter('card-footer');
+    //     this.renderReadPostBtn('Read more...');
+
+    // }
+    // renderPostCard_3() {
+    //     this.renderCardContainer('card-container');
+    //     this.renderCardImg('src/img/post-img-1.jpg');
+    //     this.renderPostTitle('New Post 3');
+    //     this.renderPostContent('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime temporibus praesentium aspernatur natus.');
+    //     this.renderCardFooter('card-footer');
+    //     this.renderReadPostBtn('Read more...');
+
+    // }
 }
 /**
  * @desc create class for Team block 
@@ -380,11 +426,11 @@ blogBlock.renderBlog();
 */
 let cardsWrapper = document.getElementById('cards_wrapper');
 let blogPost1 = new BlogPostCard(cardsWrapper);
-blogPost1.renderPostCard_1();
-let blogPost2 = new BlogPostCard(cardsWrapper);
-blogPost2.renderPostCard_2()
-let blogPost3 = new BlogPostCard(cardsWrapper);
-blogPost3.renderPostCard_3();
+blogPost1.renderPostCard();
+// let blogPost2 = new BlogPostCard(cardsWrapper);
+// blogPost2.renderPostCard_2()
+// let blogPost3 = new BlogPostCard(cardsWrapper);
+// blogPost3.renderPostCard_3();
 /**
  * @desc render Team block
 */
