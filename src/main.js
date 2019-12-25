@@ -160,32 +160,33 @@ class BlogBlock extends CreateBlock {
 class BlogPostCard {
     constructor(cardsWrapper) {
         this.cardsWrapper = cardsWrapper;
-        // this.cardContainer = document.createElement('div');
-        // this.cardImg = document.createElement('img');
-        // this.postTitle = document.createElement('h2');
+        this.cardContainer = document.createElement('div');
+        this.cardImg = document.createElement('img');
+        this.postTitle = document.createElement('h2');
         this.postContent = document.createElement('p');
         this.cardFooter = document.createElement('div');
         this.readPostBtn = document.createElement('button');
     }
-    renderCardContainer() {
-        for  (let i = 0; i < blogCardsData.length; i++) {
-            let cardContainer = document.createElement('div');
-            this.cardsWrapper.append(cardContainer);
-            cardContainer.className = 'card-container';
-        }
-    }
-    // renderCardContainer(cardContainerClassName) {
-    //     this.cardsWrapper.append(this.cardContainer);
-    //     this.cardContainer.className = cardContainerClassName;
+    // renderCardContainer() {
+    //     for  (let i = 0; i < blogCardsData.length; i++) {
+    //         let cardContainer = document.createElement('div');
+    //         this.cardsWrapper.append(cardContainer);
+    //         cardContainer.className = 'card-container';
+    //     }
     // }
-    renderCardImg() {
-        for (let i = 0; i < blogCardsData.length; i++) {
-            let cardImg = document.createElement('img');
-            this.cardContainer.append(cardImg);
-            cardImg.setAttribute('src', blogCardImgs[i]);
-        }
-       
+    renderCardContainer(cardContainerClassName) {
+        this.cardsWrapper.append(this.cardContainer);
+        this.cardContainer.className = cardContainerClassName;
+        return this.cardContainer
     }
+    // renderCardImg() {
+    //     for (let i = 0; i < blogCardsData.length; i++) {
+    //         let cardImg = document.createElement('img');
+    //         this.cardContainer.append(cardImg);
+    //         cardImg.setAttribute('src', blogCardImgs[i]);
+    //     }
+       
+    // }
     // renderCardImg(cardImgSrc) {
     //     this.cardContainer.append(this.cardImg);
     //     this.cardImg.setAttribute('src', cardImgSrc);
@@ -232,10 +233,13 @@ class BlogPostCard {
         // this.renderCardFooter('card-footer');
         // this.renderReadPostBtn('Read more...');
         console.log(this.cardsWrapper);
+        for (let i = 0; i < blogCardsData.length; i++) {
+           let cards = this.renderCardContainer('card-container');
+        }
         
-        this.renderCardContainer();
-        this.renderCardImg();
-        this.renderPostTitle();
+        console.log(this.cardContainer);
+        // this.renderCardImg();
+        // this.renderPostTitle();
     }
     // renderPostCard_1() {
     //     this.renderCardContainer('card-container');
